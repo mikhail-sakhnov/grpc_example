@@ -1,0 +1,19 @@
+syntax="proto3";
+package tutorial;
+
+option go_package="tutorial";
+
+
+message Value {
+    string content = 1;
+}
+
+message Key {
+    string key = 2;
+}
+
+service StorageService {
+    rpc Put(Value) returns (Key);
+    rpc Get(Key) returns (Value);
+}
+
